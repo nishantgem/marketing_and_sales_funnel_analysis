@@ -20,12 +20,11 @@ joined as (
         o.order_purchase_ts,
         o.order_approved_ts,
 
-        -- match staging names exactly
         o.order_carrier_delivered_ts,
         o.order_customer_delivered_ts,
         o.order_estimated_delivery_ts,
 
-        date_diff('day', o.order_purchase_ts, o.order_customer_delivered_ts) as delivery_days
+        extract(day from (o.order_customer_delivered_ts - o.order_purchase_ts)) as delivery_days
     from orders o
     left join customers c using (customer_id)
 )
