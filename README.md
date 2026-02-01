@@ -1,4 +1,4 @@
-# marketing_and_sales_funnel_analysis
+# Olist customer and sales analytics
 
 Analyze the Brazilian E‑Commerce Public Dataset by Olist to measure marketing and sales funnel performance from order creation to delivery and review.[web:11][web:13]
 
