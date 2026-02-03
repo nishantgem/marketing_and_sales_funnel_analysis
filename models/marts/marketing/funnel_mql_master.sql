@@ -22,16 +22,16 @@ joined as (
         m.first_contact_date,
         m.landing_page_id,
         m.origin,
-        m.lead_behaviour_profile,
         m.lead_score,
 
-        -- Closed deals fields
+        -- Closed deals fields (correct source)
         cd.seller_id,
         cd.sdr_id,
         cd.sr_id,
         cd.won_date,
         cd.business_segment,
-        cd.lead_type,                  -- ✔ correct source
+        cd.lead_type,
+        cd.lead_behaviour_profile,
         cd.has_company,
         cd.has_gtin,
         cd.average_stock,
