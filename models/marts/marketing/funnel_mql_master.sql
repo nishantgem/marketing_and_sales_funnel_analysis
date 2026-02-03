@@ -27,7 +27,7 @@ joined as (
         m.landing_page_id,
         m.origin,
 
-        -- Closed deals fields (correct source)
+        -- Closed deals fields
         cd.seller_id,
         cd.sdr_id,
         cd.sr_id,
@@ -35,7 +35,6 @@ joined as (
         cd.business_segment,
         cd.lead_type,
         cd.lead_behaviour_profile,
-        cd.lead_score,
         cd.has_company,
         cd.has_gtin,
         cd.average_stock,
