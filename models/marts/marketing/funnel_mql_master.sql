@@ -1,7 +1,11 @@
 {{ config(materialized='table') }}
 
 with mql as (
-    select *
+    select
+        mql_id,
+        first_contact_date,
+        landing_page_id,
+        origin
     from {{ ref('stg_mql') }}
 ),
 
@@ -22,7 +26,6 @@ joined as (
         m.first_contact_date,
         m.landing_page_id,
         m.origin,
-        m.lead_score,
 
         -- Closed deals fields (correct source)
         cd.seller_id,
@@ -32,6 +35,7 @@ joined as (
         cd.business_segment,
         cd.lead_type,
         cd.lead_behaviour_profile,
+        cd.lead_score,
         cd.has_company,
         cd.has_gtin,
         cd.average_stock,
